@@ -8,6 +8,21 @@
   <script src="https://unpkg.com/aframe-physics-extras/dist/aframe-physics-extras.min.js"></script>
   <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
   <script>
+      function randomizeColor (target) {
+        target.setAttribute('color','#'+Math.random().toString(16).substr(-6));
+        // color randomizer credit: http://stackoverflow.com/a/7638362
+      }
+      function paintBall (evt) {
+        var col = evt.target.getAttribute('color');
+        var target = evt.relatedTarget.querySelector('a-sphere')
+        target.setAttribute('color', col);
+        target.setAttribute('visible', true);
+      }
+      function unPaintBall (evt) {
+        evt.relatedTarget.querySelector('a-sphere')
+            .setAttribute('visible', false);
+      }
+    </script>
   </head>
   <body>
    <a-scene environment="preset: japan; shadow: true">
