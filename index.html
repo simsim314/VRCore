@@ -16,6 +16,7 @@ AFRAME.registerComponent('phase-shift', {
           })
           el.addEventListener('gripup', function () {
             el.setAttribute('collision-filter', {collisionForces: false})
+            el.setAttribute('body', {type: "static"});
           });
         }
       })
@@ -35,7 +36,7 @@ AFRAME.registerComponent('phase-shift', {
         <a-mixin id="touch"
                  physics-collider phase-shift
                  collision-filter="collisionForces: false"
-                 static-body="shape: sphere; sphereRadius: 0.02; position: 0 0.1 -0.1;"
+                 static-body="shape: sphere; sphereRadius: 0.02; spherePosition: 0 1 -1;"
                  super-hands="colliderEvent: collisions;
                               colliderEventProperty: els;
                               colliderEndEvent: collisions;
@@ -52,7 +53,7 @@ AFRAME.registerComponent('phase-shift', {
        <a-box static-body width=100 height=0.001 depth=100 visible="false"></a-box>
      
       <a-entity id="color" position="0 0.7 -1.5"
-                text="color: green; align: center; value: Hello world 6; width: 3">
+                text="color: green; align: center; value: Hello world 1; width: 3">
       </a-entity>
     </a-scene>
   </body>
