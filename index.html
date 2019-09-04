@@ -16,22 +16,4 @@
     <!-- hover & drag-drop won't have any obvious effect without some additional event handlers or components. See the examples page for more -->
     <a-box hoverable grabbable stretchable draggable dropppable color="blue" position="0 0 -1"></a-box>
   </a-scene>
-  
-  <script>
- // Scene entity element
-var scene = document.querySelector('a-scene');
-
-// Check if scene has loaded, otherwise set up listener for when it does.
-if (scene.hasLoaded) {
-  scene.enterVR();
-} else {
-  scene.addEventListener('loaded', addButtonListener);
-}
-
-// Add our button click listener.
-function addButtonListener() {
-    scene.enterVR();
-}
-  </script>
-  
 </body>
