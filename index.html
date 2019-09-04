@@ -28,7 +28,7 @@ AFRAME.registerComponent('phase-shift', {
 
         <a-mixin id="controller" super-hands
                  sphere-collider="objects: .cube"></a-mixin>
-        <a-mixin id="cube" geometry="primitive: box; width: 0.5; height: 0.5; depth: 0.5"
+        <a-mixin id="cube" geometry="primitive: box; width: 0.25; height: 0.25; depth: 0.25"
                  hoverable grabbable stretchable draggable droppable
                  event-set__drop="_event: drag-drop; geometry.radius: 0.25; geometry.primitive: sphere;"
                  event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true"
@@ -38,9 +38,13 @@ AFRAME.registerComponent('phase-shift', {
       </a-assets>
       <a-entity id="lhand" hand-controls="left" mixin="controller"></a-entity>
       <a-entity id="rhand" hand-controls="right" mixin="controller"></a-entity>
-      <a-entity id="redLow" class="cube" mixin="cube" position="0 1 -1" material="color: red"></a-entity>
+      <a-entity id="redLow" class="cube" mixin="cube" position="-1 0.5 -0.5" material="color: red"></a-entity>
       <a-plane rotation="-90 0 0" color="#888"
                  width="50" height="50"></a-plane>
+      
+      <a-entity id="color" position="0 0.7 -0.5"
+                text="color: green; align: center; value: Hello world 11; width: 3">
+      </a-entity>
     </a-scene>
   </body>
 </html>
