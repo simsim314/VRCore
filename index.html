@@ -47,8 +47,7 @@
                  event-set__dragoff="_event: dragover-end; material.wireframe: false"
                  geometry="primitive: box; width: 0.5; height: 0.5; depth: 0.5"></a-mixin>
         <a-mixin id="touch"
-                 physics-collider phase-shift
-                 collision-filter="collisionForces: false"
+                 collider phase-shift
                  static-body="shape: sphere; sphereRadius: 0.02"
                  super-hands="colliderEvent: collisions;
                               colliderEventProperty: els;
