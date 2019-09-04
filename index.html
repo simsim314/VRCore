@@ -3,9 +3,26 @@
    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
   <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
   <script src="https://unpkg.com/super-hands@3.0.0/dist/super-hands.min.js"></script>
+  <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v3.1.2/dist/aframe-physics-system.min.js"></script>
+  <script src="https://unpkg.com/aframe-event-set-component@^4.1.1/dist/aframe-event-set-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-physics-extras/dist/aframe-physics-extras.min.js"></script>
+  <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+  <script>
+AFRAME.registerComponent('phase-shift', {
+        init: function () {
+          var el = this.el
+          el.addEventListener('gripdown', function () {
+            el.setAttribute('collision-filter', {collisionForces: true});
+          })
+          el.addEventListener('gripup', function () {
+            el.setAttribute('collision-filter', {collisionForces: false})
+          });
+        }
+      })
+    </script>
   </head>
   <body>
-    <a-scene avatar-recorder="spectatorPlay: true; spectatorPosition: 0 1.6 2">
+    <a-scene physics="debug:true">
       <a-assets>
         <!-- <img id="grid" src="grid.png"/> -->
 
